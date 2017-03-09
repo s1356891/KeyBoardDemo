@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <LinearLayout
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <Button
+            android:id="@+id/btn_showKey"
+            android:text="show"
+            android:textSize="20sp"
+            android:layout_marginLeft="15dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+        <Button
+            android:id="@+id/btn_hideKey"
+            android:text="hide"
+            android:textSize="20sp"
+            android:layout_marginLeft="15dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+        <Button
+            android:id="@+id/btn_price"
+            android:text="price"
+            android:textSize="20sp"
+            android:layout_marginLeft="15dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+        <Button
+            android:id="@+id/btn_number"
+            android:text="num"
+            android:textSize="20sp"
+            android:layout_marginLeft="15dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_below="@+id/top"
+        android:id="@+id/rl__keyboard"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@null"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:visibility="gone" >
+
+        <com.workspace.bin.keyboarddemo.view.MyKeyboardView
+            android:id="@+id/keyboard_view"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="#d8d8d8"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:keyPreviewOffset="0dp"
+            android:keyBackground="@drawable/bg_keyboard_btn"
+            android:keyPreviewLayout="@layout/preview_keyboard"
+            android:keyTextColor="#333333"
+            android:paddingTop="1dp"
+            android:shadowColor="#ffffff"
+            android:shadowRadius="0.0" />
+
+        <RelativeLayout
+            android:id="@+id/rl_editor"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_above="@id/keyboard_view"
+            android:background="#ffffff"
+            android:gravity="center"
+            android:padding="3dp" >
+
+            <com.workspace.bin.keyboarddemo.view.XEditText
+                android:id="@+id/et_amount"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_alignParentTop="true"
+                android:layout_margin="2dp"
+                android:background="#ffffff"
+                android:drawableRight="@drawable/keboard_back"
+                android:gravity="center"
+                android:inputType="@null"
+                android:padding="3dp"
+                android:textColor="#00aeef" />
+        </RelativeLayout>
+    </RelativeLayout>
+</RelativeLayout>
